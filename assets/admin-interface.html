@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Hiresphere &mdash; Hiresphere</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="stylesheet" href="css/custom-bs.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/line-icons/style.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/quill.snow.css">
+
+  <style>
+    .signuplnk {
+      margin-left: 40%;
+      color: #89ba16;
+    }
+  </style>
+
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="top">
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+
+
+    <!-- NAVBAR -->
+    <header class="site-navbar mt-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="site-logo col-6"><a href="index.html"></a></div>
+          
+          <table >
+           
+          <td >
+            <button type="submit" onclick="viewmyrequests()"
+            class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">Requests</button>
+          </td>
+          <td>
+            <button type="submit" onclick="joblist()" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">View
+              Jobs</button>
+          </td>
+          <td><a href="post-job.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">post a job
+          </a>
+         
+        </td>
+          </table>
+  
+
+          <nav class="mx-auto site-navigation">
+           
+          </nav>
+
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+            <div class="ml-auto">
+              
+              <a href="index.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"> Home</a>
+              <a href="Admin-login.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"> Log Out</a>
+            </div>
+          </div>
+          <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
+              class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+        </div>
+
+      </div>
+  </div>
+  </header>
+
+  <!-- HOME -->
+  <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');"
+    id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold">Admin interface</h1>
+          <div class="custom-breadcrumbs">
+            <a href="./index.html">Home</a> <span class="mx-2 slash"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .apply-button {
+      background-color: #89ba16;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .apply-button:hover {
+      background-color: #89ba16;
+    }
+  </style>
+  <style>
+    .search-jobs-form {
+      width: 200%;
+      /* Set the width of the form container */
+      margin-bottom: 20px;
+      /* Adjust the margin-bottom as needed */
+    }
+
+    .selectpicker {
+      width: 200%;
+      /* Set the width of the select dropdown */
+      height: 40px;
+      /* Adjust the height as needed */
+      font-size: 16px;
+      /* Adjust the font size as needed */
+    }
+ 
+  </style>
+  </head>
+
+  <body>
+    <div id="table-container">
+      <div id="joblist"></div>
+    </div>
+    <form method="post" class="search-jobs-form">
+      <div class="row mb-8">
+        <div class="col-16 col-sm-8 col-md-8 col-lg-6 mb-8 mb-lg-0">
+          <table class="center" class="elementcontainer" id="joblist">
+            <tr>
+              <style>
+                .center {
+                  margin-left: auto;
+                  margin-right: auto;
+                }
+              </style>
+              
+              <form class="search-jobs-form">
+                <div class="margin-left">
+                  <div class="col-8 col-sm-6 col-md-5 col-lg-5 mb-6 mb-lg-0">
+                    <!-- <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0"> -->
+                    <select class="selectpicker" name="alljobs" id="alljobs" data-style="btn-white btn-lg"
+                      data-width="100%" data-live-search="true" title="Jobs" required>
+                      <option>Data Analyst</option>
+                      <option>UI Designer</option>
+                      <option>Graphic Designer</option>
+                      <option>App Develeper</option>
+                      <option>Full Stack Developer</option>
+                      <option>Business Analyst</option>
+                      <option>Project Manager</option>
+                      <option>System Engineer</option>
+                      <option>Security Analyst</option>
+                      <option>Systems Administrator</option>
+                      <option>Account Executive</option>
+                      <option>Software Engineer</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <button onclick="SearchJob()" type="submit"
+                      class="btn btn-primary btn-lg btn-block text-white btn-search"><span
+                        class="icon-search icon mr-2"></span>Search Job</button>
+                  </div>
+             
+        </div>
+        
+        </tr>
+        </table>
+         </form>
+        </div>
+        <style>
+          /* Styles for the job-type table */
+          #job-type {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #ccc;
+          }
+
+          #job-type th,
+          #job-type td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+          }
+
+          #job-type th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+          }
+
+          /* Optional: Add hover effect to rows */
+          #job-type tr:hover {
+            background-color: #f9f9f9;
+          }
+        </style>
+
+        
+      </div>
+      </div>
+    </form>
+
+    <style>
+      .admin-message {
+        text-align: center;
+        font-size: 24px;
+        color: #333;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+  
+      .bold-heading {
+        font-weight: bold;
+      }
+    </style>
+
+    <h2 class="admin-message">Welcome to the Admin Interface!</h2>
+    <p>Congratulations, you've entered the central control hub for managing and optimizing our system. As an authorized
+      administrator, you hold the keys to unlock powerful tools that will streamline processes, enhance security, and
+      make data-driven decisions.
+
+      From user management to content updates, system configurations to insightful analytics, this interface puts you in
+      the driver's seat. With great power comes great responsibility, and we trust you'll wield it with expertise and
+      care.
+
+      Navigate through the intuitive menus, explore the features at your fingertips, and make the most of this
+      efficient, user-friendly platform. If you encounter any challenges or have questions, our support team is just a
+      click away.
+
+      Thank you for being an essential part of our system's success. Let's work together to achieve excellence and
+      elevate our performance to new heights!
+
+      Happy managing!</p>
+
+
+    <section class="site-section">
+      <style>
+        /* Style for the search input field */
+        #seearch {
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+          width: 200px;
+          margin-right: 10px;
+        }
+
+        /* Style for the search button */
+        #search-btn {
+          padding: 8px 16px;
+          background-color: green;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      </style>
+
+
+      <script>
+        function SearchJob() {
+          var jobtype = document.getElementById("alljobs").value;
+          event.preventDefault();
+          if (!jobtype) return alert("Select a job type");
+          let data = JSON.stringify({ "jobtype": jobtype });
+          const xhr = new XMLHttpRequest();
+          xhr.withCredentials = true;
+          xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+              const res = JSON.parse(this.responseText);
+              var table = '<table class="joblist">  <tr><th>job-type</th><th>company-name</th><th>job-region</th></tr>', element = "";
+              if (res.data.length > 0) {
+                for (let index = 0; index < res.data.length; index++) {
+                  element += '<tr><td>' + res.data[index].jobtype + '</td><td>' + res.data[index].comname
+                    + '</td><td>' + res.data[index].jobregion + '</td></tr>';
+
+
+                }
+              }
+              table += element;
+              table += '</table>'
+              document.getElementById("joblist").innerHTML = table;
+            }
+          });
+          xhr.open("POST", "http://localhost:3000/findjob");
+          xhr.setRequestHeader("Accept", "*/*");
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.send(data);
+        }
+        function viewmyrequests() {
+          event.preventDefault()
+          let data = null
+          const xhr = new XMLHttpRequest();
+          xhr.withCredentials = true;
+          xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+              const res = JSON.parse(this.responseText);
+              var table = '<table class="job-type table table-striped">  <tr><th>job-type</th><th>company-name</th><th>job-region</th><th>Status</th><th>CV</th><th>Action</th></tr>', element = "";
+              if (res.data.length > 0) {
+                for (let index = 0; index < res.data.length; index++) {
+                  if(res.data[index].status == "pending"){
+                    element += '<tr><td>' + res.data[index].jobtype + '</td><td>' + res.data[index].company
+                      + '</td><td>' + res.data[index].region + '</td><td>' + res.data[index].status + '</td><td><a href="/cv/' + res.data[index].cv + '">View CV</a></td><td><button class="apply-button" type="button" onclick="accept(`' + res.data[index]._id + '`)">Accept</button></td><td><button class="apply-button" type="button" onclick="reject(`' + res.data[index]._id + '`)">Reject</button></td></tr>';
+                  }
+                }
+              }
+              table += element;
+              table += '</table>'
+              document.getElementById("joblist").innerHTML = table;
+            }
+          });
+          xhr.open("GET", "http://localhost:3000/viewrequest");
+          xhr.setRequestHeader("Accept", "*/*");
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.send(data);
+        }
+        function deleteUser(email) {
+          if (confirm("Are you sure you want to delete this user?")) {
+            let data = null;
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+              if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+                // Handle the response after deleting the user
+                // For example, you can refresh the user list by calling the joblist() function
+                joblist();
+              }
+            });
+            xhr.open("DELETE", "http://localhost:3000/deleteuser");
+            xhr.setRequestHeader("Accept", "*/*");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify({ email: email }));
+          }
+        }
+        function accept(id)
+        {
+          if (confirm("Are you sure you want to accept this request?")) {
+            let data = JSON.stringify({"id":id,"status":"accepted"});
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+              if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+                alert('Request Accepted');
+                viewmyrequests()
+              }
+            });
+            xhr.open("PUT", "http://localhost:3000/updaterequest");
+            xhr.setRequestHeader("Accept", "*/*");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(data);
+          }
+        }
+        function reject(id){
+          if (confirm("Are you sure you want to reject this request?")) {
+            let data = JSON.stringify({"id":id,"status":"rejected"});
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+              if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+                alert('Request Rejected');
+                viewmyrequests()
+              }
+            });
+            xhr.open("PUT", "http://localhost:3000/updaterequest");
+            xhr.setRequestHeader("Accept", "*/*");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(data);
+          }
+        }
+      </script>
+
+
+
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+
+        .joblist {
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        .joblist th,
+        .joblist td {
+          padding: 8px;
+        }
+
+        .joblist th {
+          background-color: #f2f2f2;
+          text-align: left;
+          font-weight: bold;
+          /* Added to make the heading bold */
+        }
+
+        .joblist tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+
+        .joblist tr:hover {
+          background-color: #ddd;
+        }
+
+        .delete-button {
+          background-color: #dc3545;
+          color: white;
+          border: none;
+          padding: 8px 12px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        .delete-button:hover {
+          background-color: #c82333;
+        }
+
+        /* Remove the borders from the table */
+        .joblist {
+          border: none;
+        }
+
+        .joblist th,
+        .joblist td {
+          border: none;
+        }
+      </style>
+
+      
+      <script>
+        function joblist() {
+          event.preventDefault()
+          let data = null
+          const xhr = new XMLHttpRequest();
+          xhr.withCredentials = true;
+          xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+              const res = JSON.parse(this.responseText);
+              var table = '<table class="joblist">  <tr><th>job-type</th><th>company-name</th><th>job-region</th><th>Delete</th></tr>', element = "";
+              if (res.data.length > 0) {
+                for (let index = 0; index < res.data.length; index++) {
+                  element += '<tr><td>' + res.data[index].jobtype + '</td><td>' + res.data[index].comname
+                    + '</td><td>' + res.data[index].jobregion + '</td><td><button class="apply-button" type="submit" onclick="deleteUser(`' + res.data[index]._id + '`)"(' + res.data[index].email + ')">Delete</button></td></tr>';
+
+
+                }
+              }
+              table += element;
+              table += '</table>'
+              document.getElementById("joblist").innerHTML = table;
+            }
+          });
+          xhr.open("GET", "http://localhost:3000/view");
+          xhr.setRequestHeader("Accept", "*/*");
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.send(data);
+        }
+
+      </script>
+    </section>
+
+
+
+
+
+
+    <footer class="site-footer">
+
+
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3></h3>
+            <ul class="list-unstyled">
+              <li><a href="contact.html">Contact Us</a></li>
+
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3></h3>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Home</a></li>
+
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3></h3>
+            <ul class="list-unstyled">
+              <li><a href="about.html">About Us</a></li>
+
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-12">
+          <p class="copyright"><small>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </small></p>
+        </div>
+      </div>
+      </div>
+    </footer>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="js/bootstrap-select.min.js"></script>
+
+    <script src="js/custom.js"></script>
+
+
+  </body>
+
+</html>
